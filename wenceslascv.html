@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Wenceslas De Komarowski</title>
+
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --paper:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent2:#0f172a;
+      --line:#e5e7eb;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body{
+      background:var(--bg);
+      padding:30px;
+      color:var(--text);
+    }
+
+    .page{
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--paper);
+      margin: auto;
+      border-radius: 14px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      display:grid;
+      grid-template-columns: 34% 66%;
+    }
+
+    /* LEFT */
+    .left{
+      background: linear-gradient(180deg, var(--accent2), #111827);
+      color: white;
+      padding: 32px 26px;
+    }
+
+    .photo{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background: rgba(255,255,255,0.15);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      margin-bottom:18px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .name{
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing:0.4px;
+      line-height: 1.2;
+    }
+
+    .role{
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .section-left{
+      margin-top: 22px;
+    }
+
+    .section-left h3{
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .info{
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .info span{
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.12);
+      font-size: 12px;
+      margin: 5px 6px 0 0;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* RIGHT */
+    .right{
+      padding: 32px 34px;
+    }
+
+    .profile{
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .block{
+      margin-top: 18px;
+    }
+
+    .block h2{
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 6px;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      font-size: 12.8px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .skills div{
+      padding:10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfdff;
+    }
+
+    .skills strong{
+      display:block;
+      margin-bottom:4px;
+      color: var(--accent2);
+      font-size: 12.5px;
+    }
+
+    .exp{
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .exp:last-child{
+      border-bottom:none;
+    }
+
+    .exp-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:10px;
+      margin-bottom: 6px;
+    }
+
+    .exp-title h4{
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--accent2);
+    }
+
+    .exp-title .date{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      white-space:nowrap;
+    }
+
+    .exp-company{
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    ul{
+      margin-left: 18px;
+      font-size: 12.8px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    ul li{
+      margin-bottom: 4px;
+    }
+
+    .edu{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      font-size: 12.8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edu:last-child{
+      border-bottom:none;
+    }
+
+    .edu strong{
+      color: var(--accent2);
+    }
+
+    .edu span{
+      color: var(--muted);
+      font-weight: 700;
+      white-space:nowrap;
+    }
+
+    /* PRINT */
+    @media print{
+      body{
+        background:white;
+        padding:0;
+      }
+      .page{
+        box-shadow:none;
+        border-radius:0;
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+@media print {
+  body{
+    padding: 0 !important;
+  }
+
+  .page{
+    height: 297mm !important;
+    min-height: 297mm !important;
+  }
+
+  .right{
+    padding: 26px 28px !important; /* réduit un peu */
+  }
+
+  .left{
+    padding: 26px 22px !important; /* réduit un peu */
+  }
+
+  .profile{
+    font-size: 12.8px !important;
+  }
+
+  ul{
+    font-size: 12.2px !important;
+  }
+
+  .skills div{
+    padding: 8px !important;
+  }
+
+  .block{
+    margin-top: 14px !important;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- LEFT -->
+    <aside class="left">
+      <div class="photo">Photo</div>
+
+      <div class="name">WENCESLAS<br>DE KOMAROWSKI</div>
+      <div class="role">Technicien Support Informatique N1/N2</div>
+
+      <div class="section-left">
+        <h3>Contact</h3>
+        <div class="info">
+          <div><span>📍</span> Laxou (54520)</div>
+          <div><span>📞</span> 06 72 54 12 58</div>
+          <div><span>✉️</span> wenceslasthamar@hotmail.com</div>
+          <div><span>🔗</span> linkedin.com/wenceslas-thamar</div>
+	  <div>Permis B</div>
+	
+        </div>
+      </div>
+
+      <div class="section-left">
+        <h3>Mobilité</h3>
+        <div class="info">
+          France entière (déménagement possible)
+        </div>
+      </div>
+
+      <div class="section-left">
+        <h3>Langues</h3>
+        <div class="info">
+          Français : C2<br>
+          Anglais : B2
+        </div>
+      </div>
+
+      <div class="section-left">
+        <h3>Certifications</h3>
+        <div class="info">
+          <div class="tag">Cisco IT Essentials 7</div>
+          <div class="tag">Salesforce Admin</div>
+          <div class="tag">Salesforce Developer</div>
+          <div class="tag">Salesforce App Builder</div>
+          <div class="tag">BS-BE Manœuvre</div>
+        </div>
+      </div>
+
+      <div class="section-left">
+        <h3>Atouts</h3>
+        <div class="info">
+          Rigueur • Autonomie<br>
+          Sens du service • Esprit d’équipe<br>
+          Gestion des priorités
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <main class="right">
+
+      <p class="profile">
+        Technicien Support Informatique N1/N2 en fin de formation <strong>AFPA (Titre Pro Technicien Informatique de Proximité)</strong>,
+        actuellement en PAE au <strong>Rectorat de l’Académie Nancy-Metz (DRASI)</strong>. Disponible à partir du
+        <strong>29 juin 2026</strong>.
+      </p>
+
+      <section class="block">
+        <h2>Compétences clés</h2>
+        <div class="skills">
+          <div>
+            <strong>Support & ITSM</strong>
+            Tickets, diagnostic incidents, escalade, suivi (Kristal / GLPI)
+          </div>
+          <div>
+            <strong>Systèmes</strong>
+            Windows 10/11, installation, dépannage, maintenance poste de travail
+          </div>
+          <div>
+            <strong>Déploiement</strong>
+            Déploiement Windows 11 via MDT, configuration et préparation postes
+          </div>
+          <div>
+            <strong>Apple / Mobilité</strong>
+            Jamf Cloud, Apple Configurator, Workspace ONE (Magenta)
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Expériences</h2>
+
+        <div class="exp">
+          <div class="exp-title">
+            <h4>Technicien Support Informatique (PAE)</h4>
+            <div class="date">Avr 2026 – Juin 2026</div>
+          </div>
+          <div class="exp-company">Rectorat Nancy-Metz (DRASI) – Nancy</div>
+          <ul>
+            <li>Déploiement de postes Windows 11 via <strong>MDT</strong></li>
+            <li>Gestion des incidents et demandes via <strong>Kristal (ITSM)</strong></li>
+            <li>Diagnostic pannes matériel / connectivité (écrans, périphériques, réseau)</li>
+            <li>Enrôlement d’iPad via <strong>Jamf Cloud</strong> et Apple Configurator</li>
+            <li>Utilisation Workspace ONE / Magenta</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-title">
+            <h4>Consultant / Administrateur Salesforce</h4>
+            <div class="date">Oct 2023 – Mars 2025</div>
+          </div>
+          <div class="exp-company">Sunwise Talents – Libreville</div>
+          <ul>
+            <li>Administration Salesforce : objets, champs, profils, permissions</li>
+            
+            <li>Support utilisateurs et accompagnement fonctionnel</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-title">
+            <h4>Développeur Web (Freelance / DETECH 2.0)</h4>
+            <div class="date">Mars 2020 – Oct 2022</div>
+          </div>
+          <div class="exp-company">Libreville</div>
+          <ul>
+            <li>Création et maintenance de sites WordPress</li>
+            <li>Support technique client et mises à jour</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-title">
+            <h4>Stagiaire Transformation Numérique</h4>
+            <div class="date">Août 2019 – Jan 2020</div>
+          </div>
+          <div class="exp-company">COMILOG – Libreville</div>
+          <ul>
+            <li>Suivi des livrables et coordination avec une équipe externe</li>
+            <li>Participation au contrôle du cahier des charges</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="block">
+        <h2>Formation</h2>
+
+        <div class="edu">
+          <div><strong>Titre Pro Technicien Informatique de Proximité (TIP)</strong> – AFPA Pompey</div>
+          <span>2025 – 2026</span>
+        </div>
+
+        <div class="edu">
+          <div><strong>Certification Référent Digital (Simplon / DCLIC)</strong> – Low/No Code (940h)</div>
+          <span>2022 – 2023</span>
+        </div>
+
+        <div class="edu">
+          <div><strong>Niveau Licence Informatique de Gestion</strong> – ITA Libreville</div>
+          <span>2017 – 2019</span>
+        </div>
+
+        <div class="edu">
+          <div><strong>Baccalauréat Général</strong> – Lycée Privé Les Aiglons</div>
+          <span>2016</span>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
